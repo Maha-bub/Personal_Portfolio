@@ -8,7 +8,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ── RESET & BASE ── */
+/*Reset and base*/
 *,
 *::before,
 *::after {
@@ -35,7 +35,7 @@ html {
     border-radius: 2px;
 }
 
-/* ── NOISE OVERLAY ── */
+/* noise overlay */
 body::after {
     content: "";
     position: fixed;
@@ -47,7 +47,7 @@ body::after {
 }
 
 /* Navigatioin styles */
-/* ── NAV ── */
+
 .nav {
     position: fixed;
     top: 0;
