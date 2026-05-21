@@ -1,0 +1,9 @@
+/* global style for body */
+body {
+  background: #0d0d0d;
+  color: #e8e8ef;
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
