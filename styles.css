@@ -103,3 +103,25 @@ body {
     border-radius: 2px;
     transition: 0.3s;
 }
+
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  padding: 16px 20px 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mobile-menu a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #e8e8ef;
+  font-size: 15px;
+}
