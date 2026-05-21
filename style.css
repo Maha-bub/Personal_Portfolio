@@ -1,9 +1,105 @@
 /* global style for body */
 body {
-  background: #0d0d0d;
-  color: #e8e8ef;
-  font-family: "Outfit", sans-serif;
-  font-size: 15px;
-  line-height: 1.7;
-  overflow-x: hidden;
+    background: #0d0d0d;
+    color: #e8e8ef;
+    font-family: "Outfit", sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Navigatioin styles */
+/* ── NAV ── */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(13, 13, 13, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s;
+}
+
+
+.nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+}
+
+
+.nav-logo {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+}
+
+.nav-logo span {
+    color: #ec8f4d;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: #8888aa;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-cta {
+    background: #ec8f4d;
+    color: #0d0d0d;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 9px 22px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.25s;
+    box-shadow: 0 0 24px rgba(236, 143, 77, 0.25);
+}
+
+.nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 32px rgba(236, 143, 77, 0.35);
+}
+
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #e8e8ef;
+    border-radius: 2px;
+    transition: 0.3s;
 }
