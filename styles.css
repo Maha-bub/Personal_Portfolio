@@ -475,4 +475,137 @@ body::after {
     z-index: 5;
 }
 
-*/
+
+/* What I Provides sections styles */
+
+.section {
+    padding: 110px 0;
+    position: relative;
+}
+
+.section-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.s-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #ec8f4d;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.s-label::before {
+    content: "//";
+    opacity: 0.5;
+}
+
+.s-title {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(32px, 4vw, 54px);
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 60px;
+}
+
+.s-title em {
+    font-style: italic;
+    color: #ec8f4d;
+}
+
+/* ── WHAT I DO ── */
+.what-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.what-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s;
+}
+
+.what-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ec8f4d, #ff6b35);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s;
+}
+
+.what-card:hover::before {
+    transform: scaleX(1);
+}
+
+.what-card:hover {
+    border-color: rgba(236, 143, 77, 0.2);
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(236, 143, 77, 0.06);
+}
+
+.what-icon {
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.what-icon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.what-title {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.what-desc {
+    font-size: 13px;
+    color: #8888aa;
+    line-height: 1.9;
+}
+
+.what-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 16px;
+}
+
+.what-tag {
+    font-size: 11px;
+    background: rgba(236, 143, 77, 0.07);
+    border: 1px solid rgba(236, 143, 77, 0.15);
+    border-radius: 100px;
+    padding: 3px 12px;
+    color: #ec8f4d;
+    font-family: "JetBrains Mono", monospace;
+}
