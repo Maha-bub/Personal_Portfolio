@@ -35,6 +35,18 @@ html {
     border-radius: 2px;
 }
 
+/* ── SCROLL PROGRESS ── */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ec8f4d, #ff6b35);
+    z-index: 2000;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px #ec8f4d;
+}
+
 /* noise overlay */
 body::after {
     content: "";
@@ -564,20 +576,36 @@ body::after {
 .what-icon {
     width: 60px;
     height: 60px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     border-radius: 16px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    background: rgba(255, 255, 255, 0.05);
+
 }
+
+
+.what-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 
 .what-icon::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    z-index: 1;
 }
+
+
 
 .what-title {
     font-family: "Playfair Display", serif;
