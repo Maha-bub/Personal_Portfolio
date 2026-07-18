@@ -633,19 +633,20 @@
                 <div class="c-form reveal-right">
                     <div class="f-group">
                         <label class="f-label">Your Name</label>
-                        <input type="text" class="f-input" placeholder="Your Name" />
+                        <input type="text" class="f-input" id="cf-name" placeholder="Your Name" />
                     </div>
                     <div class="f-group">
                         <label class="f-label">Email Address</label>
-                        <input type="email" class="f-input" placeholder="Your Mail Address" />
+                        <input type="email" id="cf-email" class="f-input" placeholder="Your Mail Address" />
                     </div>
                     <div class="f-group">
                         <label class="f-label">Subject</label>
-                        <input type="text" class="f-input" placeholder="Project Inquiry" />
+                        <input type="text" id="cf-subject" class="f-input" placeholder="Project Inquiry" />
                     </div>
                     <div class="f-group">
                         <label class="f-label">Message</label>
-                        <textarea class="f-input" placeholder="Tell me about your project..."></textarea>
+                        <textarea id="cf-message" class="f-input"
+                            placeholder="Tell me about your project..."></textarea>
                     </div>
                     <button class="btn-primary f-submit" onclick="handleFormSubmit(this)">
                         Send Message
@@ -741,7 +742,10 @@
 
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        emailjs.init("S6zY6Pvi0Oh3RxnAj");
+    </script>
     <script src="script.js"></script>
 </body>
 

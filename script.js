@@ -58,12 +58,44 @@ document.querySelectorAll("section[id]").forEach(s => secObs.observe(s));
 
 // CONTACT FORM FEEDBACK
 function handleFormSubmit(btn) {
-  btn.textContent = "✓ Message Sent!";
-  btn.style.background = "#22c55e";
-  btn.style.boxShadow = "0 0 32px rgba(34,197,94,.4)";
-  setTimeout(() => {
-    btn.innerHTML = 'Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4z"/></svg>';
-    btn.style.background = "";
-    btn.style.boxShadow = "";
-  }, 3000);
+  const name = document.getElementById("cf-name").value.trim();
+  const email = document.getElementById("cf-email").value.trim();
+  const subject = document.getElementById("cf-subject").value.trim();
+  const message = document.getElementById("cf-message").value.trim();
+
+  if (!name || !email || !message) {
+    alert("Naam, Email, ar Message field gulo pura kore dao.");
+    return;
+  }
+
+  const originalText = btn.innerHTML;
+  btn.disabled = true;
+  btn.textContent = "Sending...";
+
+  emailjs.send("service_5egf47f", "template_dup3hln", {
+    from_name: name,
+    from_email: email,
+    subject: subject,
+    message: message,
+    to_email: "mdmahabubulalam0511@gmail.com"
+  }).then(() => {
+    btn.textContent = "✓ Message Sent!";
+    btn.style.background = "#22c55e";
+    btn.style.boxShadow = "0 0 32px rgba(34,197,94,.4)";
+    document.getElementById("cf-name").value = "";
+    document.getElementById("cf-email").value = "";
+    document.getElementById("cf-subject").value = "";
+    document.getElementById("cf-message").value = "";
+  }).catch((err) => {
+    console.error("EmailJS error:", err);
+    btn.textContent = "✗ Failed! Try Again";
+    btn.style.background = "#ef4444";
+  }).finally(() => {
+    btn.disabled = false;
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.style.background = "";
+      btn.style.boxShadow = "";
+    }, 3000);
+  });
 }
